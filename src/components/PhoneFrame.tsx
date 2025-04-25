@@ -1,13 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
 
 interface PhoneFrameProps {
-  imageUrl: string;
+  imageUrl?: string; // Make imageUrl optional
   alt?: string;
   className?: string;
 }
 
-export default function PhoneFrame({ imageUrl, alt = "App screenshot", className = "" }: PhoneFrameProps) {
+export default function PhoneFrame({ alt = "App screenshot", className = "" }: PhoneFrameProps) {
   return (
     <div className={`relative ${className}`}>
       {/* Phone Frame */}
@@ -19,19 +18,10 @@ export default function PhoneFrame({ imageUrl, alt = "App screenshot", className
             <div className="w-1/3 h-6 bg-black rounded-b-3xl"></div>
           </div>
           
-          {/* Phone Screen - Actual Image */}
+          {/* Phone Screen - Empty */}
           <div className="absolute top-8 left-0 right-0 bottom-0 overflow-hidden bg-purple-900/10">
             <div className="relative w-full h-full">
-              <Image
-                src={imageUrl}
-                alt={alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 300px"
-                className="object-cover h-full w-full"
-                priority
-                quality={100}
-                unoptimized={true}
-              />
+              {/* Image removed */}
             </div>
           </div>
           

@@ -157,7 +157,6 @@ export default function Home() {
           <AnimatedElement type="fade-left" delay={200} duration={800}>
             <div className="w-full mx-auto flex justify-center relative purple-glow-subtle">
               <PhoneFrame 
-                imageUrl="/facecard4.png" 
                 alt="Facecard app screenshot" 
                 className="max-w-[300px] transform hover:rotate-3 transition-all duration-500"
               />
