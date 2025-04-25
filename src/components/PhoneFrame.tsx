@@ -20,14 +20,19 @@ export default function PhoneFrame({ imageUrl, alt = "App screenshot", className
           </div>
           
           {/* Phone Screen - Actual Image */}
-          <div className="absolute top-8 left-0 right-0 bottom-0 overflow-hidden">
-            <Image
-              src={imageUrl}
-              alt={alt}
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="absolute top-8 left-0 right-0 bottom-0 overflow-hidden bg-purple-900/10">
+            <div className="relative w-full h-full">
+              <Image
+                src={imageUrl}
+                alt={alt}
+                fill
+                sizes="(max-width: 768px) 80vw, 300px"
+                className="object-cover"
+                priority
+                quality={90}
+                unoptimized={false}
+              />
+            </div>
           </div>
           
           {/* Home Button/Bottom Notch */}
