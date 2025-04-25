@@ -26,11 +26,11 @@ export default function PhoneFrame({ imageUrl, alt = "App screenshot", className
                 src={imageUrl}
                 alt={alt}
                 fill
-                sizes="(max-width: 768px) 80vw, 300px"
-                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 300px"
+                className="object-cover h-full w-full"
                 priority
-                quality={90}
-                unoptimized={false}
+                quality={100}
+                unoptimized={true}
               />
             </div>
           </div>
