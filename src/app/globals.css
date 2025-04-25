@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #f3f3f3;
+  --primary: #9333ea;
+  --primary-glow: rgba(147, 51, 234, 0.5);
+  --secondary: #171717;
+  --accent: #bf4ff0;
 }
 
 @theme inline {
@@ -12,10 +16,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f9f9f9;
+    --foreground: #0f0f0f;
+    --secondary: #ffffff;
   }
 }
 
@@ -33,4 +38,90 @@ html {
 /* Add button hover transitions */
 button {
   transition: all 0.2s ease-in-out;
+}
+
+/* Custom underline animation for links */
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary-glow);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Glow utilities */
+.text-glow {
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.box-glow {
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.purple-glow {
+  filter: drop-shadow(0 0 8px var(--primary-glow));
+}
+
+/* Background animation */
+.animated-bg {
+  background: linear-gradient(
+    -45deg,
+    rgba(147, 51, 234, 0.1),
+    rgba(0, 0, 0, 0),
+    rgba(147, 51, 234, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.4);
 }
