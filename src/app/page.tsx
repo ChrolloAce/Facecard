@@ -99,13 +99,13 @@ export default function Home() {
           </AnimatedElement>
           
           <AnimatedElement type="fade-left" delay={200} duration={800}>
-            <div className="w-full h-full max-w-md mx-auto rounded-xl overflow-hidden relative box-glow">
+            <div className="w-full max-w-md mx-auto rounded-xl overflow-hidden relative box-glow aspect-[4/5] md:aspect-[3/4] lg:aspect-video">
               <BeforeAfterSlider 
                 beforeImage="/before.png"
                 afterImage="/after.png"
                 beforeAlt="Before using Facecard"
                 afterAlt="After using Facecard"
-                className="aspect-[4/5] md:aspect-[3/4] lg:aspect-video"
+                className="h-full"
               />
             </div>
           </AnimatedElement>
@@ -236,40 +236,40 @@ export default function Home() {
           <AnimatedElement type="fade-up">
             <h2 className="text-4xl font-bold text-center mb-4 text-glow">Real Results</h2>
             <p className="text-lg text-center mb-16 text-purple-300 max-w-3xl mx-auto">
-              See the dramatic transformations our users have achieved with Facecard's personalized recommendations.
+              See the dramatic transformations our users have achieved with Facecard&apos;s personalized recommendations.
             </p>
           </AnimatedElement>
           
           <div className="grid md:grid-cols-2 gap-12">
             <AnimatedElement type="fade-right" delay={100}>
-              <div className="rounded-xl overflow-hidden box-glow">
+              <div className="rounded-xl overflow-hidden box-glow aspect-[4/5] md:aspect-video">
                 <BeforeAfterSlider 
                   beforeImage="/before.png"
                   afterImage="/after.png"
                   beforeAlt="Before transformation"
                   afterAlt="After transformation"
-                  className="aspect-[4/5] md:aspect-video"
+                  className="h-full"
                 />
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-xl font-semibold text-purple-300">John, 26</h3>
-                <p className="text-gray-300">3 months of following Facecard's recommendations</p>
+                <p className="text-gray-300">3 months of following Facecard&apos;s recommendations</p>
               </div>
             </AnimatedElement>
             
             <AnimatedElement type="fade-left" delay={200}>
-              <div className="rounded-xl overflow-hidden box-glow">
+              <div className="rounded-xl overflow-hidden box-glow aspect-[4/5] md:aspect-video">
                 <BeforeAfterSlider 
                   beforeImage="/before.png"
                   afterImage="/after.png"
                   beforeAlt="Before transformation"
                   afterAlt="After transformation"
-                  className="aspect-[4/5] md:aspect-video"
+                  className="h-full"
                 />
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-xl font-semibold text-purple-300">Sarah, 31</h3>
-                <p className="text-gray-300">5 months using Facecard's personalized routines</p>
+                <p className="text-gray-300">5 months using Facecard&apos;s personalized routines</p>
               </div>
             </AnimatedElement>
           </div>

@@ -19,7 +19,6 @@ export default function BeforeAfterSlider({
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   // Handle mouse/touch events
   const handleMouseDown = () => {
@@ -63,68 +62,44 @@ export default function BeforeAfterSlider({
     };
   }, []);
 
-  // Update dimensions based on container size
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const updateDimensions = () => {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
-        setDimensions({ width, height });
-      }
-    };
-
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
-    
-    return () => {
-      window.removeEventListener('resize', updateDimensions);
-    };
-  }, []);
-
   return (
     <div 
       ref={containerRef}
-      className={`relative overflow-hidden rounded-xl group cursor-move ${className}`}
+      className={`relative overflow-hidden rounded-xl group cursor-move h-full w-full ${className}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
       onTouchStart={handleMouseDown}
       onTouchEnd={handleMouseUp}
       onTouchMove={handleMouseMove}
-      style={{ aspectRatio: "16/9" }}
     >
       {/* Container with set aspect ratio */}
       <div className="w-full h-full relative bg-black">
         {/* Before image (base layer) */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0">
           <Image
             src={beforeImage}
             alt={beforeAlt}
             className="object-cover"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
           />
         </div>
 
         {/* After image (masked layer) */}
         <div 
-          className="absolute inset-0 overflow-hidden h-full"
+          className="absolute inset-0 overflow-hidden"
           style={{ width: `${sliderPosition}%` }}
         >
-          <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0">
             <Image
               src={afterImage}
               alt={afterAlt}
               className="object-cover"
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
-              style={{ 
-                width: dimensions.width > 0 ? `${dimensions.width}px` : '100%', 
-                height: dimensions.height > 0 ? `${dimensions.height}px` : '100%' 
-              }}
             />
           </div>
         </div>
