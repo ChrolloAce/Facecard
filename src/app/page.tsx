@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import AnimatedElement from "../components/AnimatedElement";
 import GlowingButton from "../components/GlowingButton";
 import AppStoreButton from "../components/AppStoreButton";
@@ -384,9 +383,9 @@ export default function Home() {
               <span className="ml-3 text-xl font-bold text-glow bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Facecard</span>
             </div>
             <div className="flex gap-8 mb-6 md:mb-0">
-              <Link href="#" className="text-sm hover-underline-animation">Privacy Policy</Link>
-              <Link href="#" className="text-sm hover-underline-animation">Terms of Service</Link>
-              <Link href="#" className="text-sm hover-underline-animation">Contact</Link>
+              <Link href="/privacy" className="text-sm hover-underline-animation">Privacy Policy</Link>
+              <Link href="/terms" className="text-sm hover-underline-animation">Terms of Service</Link>
+              <Link href="mailto:support@maktubtechnologies.com" className="text-sm hover-underline-animation">Contact</Link>
             </div>
             <div className="text-sm text-gray-400">
               © 2024 Facecard. All rights reserved.
