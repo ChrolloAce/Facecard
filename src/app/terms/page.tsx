@@ -59,7 +59,7 @@ export default function TermsOfService() {
             <p className="text-gray-300">Last Updated: June 1, 2024</p>
             
             <p className="mt-6 text-gray-300">
-              Welcome to Facecard. Please read these Terms of Service ("Terms") carefully before using the Facecard mobile application (the "App") operated by Maktub Technologies ("we," "us," or "our").
+              Welcome to Facecard. Please read these Terms of Service (&quot;Terms&quot;) carefully before using the Facecard mobile application (the &quot;App&quot;) operated by Maktub Technologies (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;).
             </p>
             
             <p className="text-gray-300">
@@ -87,7 +87,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">2. User Content</h2>
             
             <p className="text-gray-300">
-              Our App allows you to upload photos for analysis ("User Content"). By uploading User Content to the App, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, process, and display your User Content solely for the purpose of providing and improving the App.
+              Our App allows you to upload photos for analysis (&quot;User Content&quot;). By uploading User Content to the App, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, process, and display your User Content solely for the purpose of providing and improving the App.
             </p>
             
             <p className="text-gray-300">
@@ -103,7 +103,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">4. Disclaimer of Warranties</h2>
             
             <p className="text-gray-300">
-              The App is provided on an "AS IS" and "AS AVAILABLE" basis. We make no warranties, express or implied, regarding the operation of the App or the information, content, materials, or products included on the App.
+              The App is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis. We make no warranties, express or implied, regarding the operation of the App or the information, content, materials, or products included on the App.
             </p>
             
             <p className="text-gray-300">

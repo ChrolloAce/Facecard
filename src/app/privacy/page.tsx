@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
             <p className="text-gray-300">Last Updated: June 1, 2024</p>
             
             <p className="mt-6 text-gray-300">
-              At Facecard, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application ("App").
+              At Facecard, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application (&quot;App&quot;).
             </p>
             
             <p className="text-gray-300">
@@ -153,13 +153,13 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">7. Third-Party Services</h2>
             
             <p className="text-gray-300">
-              Our App may contain links to third-party websites and services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the privacy policy of every site you visit.
+              Our App may contain links to third-party websites and services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. If you click on a third-party link, you will be directed to that third party&apos;s site. We strongly advise you to review the privacy policy of every site you visit.
             </p>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">8. Changes to This Privacy Policy</h2>
             
             <p className="text-gray-300">
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date at the top. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
             </p>
             
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">9. Contact Us</h2>
