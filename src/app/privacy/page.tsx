@@ -144,7 +144,7 @@ export default function PrivacyPolicy() {
               If you are a California resident, you have the right to request information regarding the disclosure of your personal information to third parties for their direct marketing purposes. To make such a request, please contact us using the information provided below.
             </p>
             
-            <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">6. Children's Privacy</h2>
+            <h2 className="text-2xl font-semibold mt-8 mb-4 text-purple-300">6. Children&apos;s Privacy</h2>
             
             <p className="text-gray-300">
               Our App is not intended for children under 18 years of age. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take appropriate action.
