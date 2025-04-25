@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 interface ImageCarouselProps {
@@ -15,12 +15,12 @@ export default function ImageCarousel({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     setTimeout(() => setIsTransitioning(false), 500);
-  };
+  }, [isTransitioning, images.length]);
 
   const goToPrevious = () => {
     if (isTransitioning) return;
@@ -45,7 +45,7 @@ export default function ImageCarousel({
     }, autoPlayInterval);
     
     return () => clearInterval(interval);
-  }, [autoPlayInterval, currentIndex, isTransitioning]);
+  }, [autoPlayInterval, goToNext]);
 
   if (images.length === 0) return null;
 
