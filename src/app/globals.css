@@ -66,7 +66,7 @@ button {
 
 /* Glow utilities */
 .text-glow {
-  text-shadow: 0 0 10px var(--primary-glow);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .box-glow {
@@ -74,7 +74,25 @@ button {
 }
 
 .purple-glow {
-  filter: drop-shadow(0 0 8px var(--primary-glow));
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.3);
+}
+
+.purple-glow-subtle {
+  position: relative;
+}
+
+.purple-glow-subtle::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: -1;
 }
 
 /* Color inversion effects */

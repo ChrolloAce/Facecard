@@ -7,6 +7,7 @@ import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import AnimatedElement from "../components/AnimatedElement";
 import GlowingButton from "../components/GlowingButton";
 import AppStoreButton from "../components/AppStoreButton";
+import PhoneFrame from "../components/PhoneFrame";
 
 export default function Home() {
   // For header transparency effect
@@ -155,13 +156,11 @@ export default function Home() {
           </AnimatedElement>
           
           <AnimatedElement type="fade-left" delay={200} duration={800}>
-            <div className="w-full max-w-md mx-auto rounded-xl overflow-hidden relative box-glow aspect-[4/5] md:aspect-[3/4] lg:aspect-video">
-              <BeforeAfterSlider 
-                beforeImage="/before.png"
-                afterImage="/after.png"
-                beforeAlt="Before using Facecard"
-                afterAlt="After using Facecard"
-                className="h-full"
+            <div className="w-full mx-auto flex justify-center relative purple-glow-subtle">
+              <PhoneFrame 
+                imageUrl="/main.jpeg" 
+                alt="Facecard app screenshot" 
+                className="max-w-[300px] transform hover:rotate-3 transition-all duration-500"
               />
             </div>
           </AnimatedElement>
@@ -280,52 +279,6 @@ export default function Home() {
                 <p className="text-gray-300">
                   Update your photos regularly to visualize your improvements.
                 </p>
-              </div>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Example Before/After Section */}
-      <section className="py-20 px-8 sm:px-16 bg-black/40">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement type="fade-up">
-            <h2 className="text-4xl font-bold text-center mb-4 text-glow">Real Results</h2>
-            <p className="text-lg text-center mb-16 text-purple-300 max-w-3xl mx-auto">
-              See the dramatic transformations our users have achieved with Facecard&apos;s personalized recommendations.
-            </p>
-          </AnimatedElement>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            <AnimatedElement type="fade-right" delay={100}>
-              <div className="rounded-xl overflow-hidden box-glow aspect-[4/5] md:aspect-video">
-                <BeforeAfterSlider 
-                  beforeImage="/before.png"
-                  afterImage="/after.png"
-                  beforeAlt="Before transformation"
-                  afterAlt="After transformation"
-                  className="h-full"
-                />
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-semibold text-purple-300">John, 26</h3>
-                <p className="text-gray-300">3 months of following Facecard&apos;s recommendations</p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement type="fade-left" delay={200}>
-              <div className="rounded-xl overflow-hidden box-glow aspect-[4/5] md:aspect-video">
-                <BeforeAfterSlider 
-                  beforeImage="/before.png"
-                  afterImage="/after.png"
-                  beforeAlt="Before transformation"
-                  afterAlt="After transformation"
-                  className="h-full"
-                />
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-semibold text-purple-300">Sarah, 31</h3>
-                <p className="text-gray-300">5 months using Facecard&apos;s personalized routines</p>
               </div>
             </AnimatedElement>
           </div>
