@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import AnimatedElement from "../components/AnimatedElement";
 import GlowingButton from "../components/GlowingButton";
+import AppStoreButton from "../components/AppStoreButton";
 
 export default function Home() {
   // For header transparency effect
@@ -41,7 +42,7 @@ export default function Home() {
             alt="Facecard Logo"
             width={48}
             height={48}
-          priority
+            priority
             className="rounded-md purple-glow invert hue-rotate-180"
           />
           <span className="ml-3 text-xl font-bold text-glow bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Facecard</span>
@@ -60,16 +61,14 @@ export default function Home() {
             How It Works
           </Link>
           <Link 
-            href="#pricing" 
+            href="#gallery" 
             className="text-sm hover-underline-animation"
           >
-            Pricing
+            Gallery
           </Link>
         </div>
         <div>
-          <GlowingButton variant="primary" size="sm">
-            Get Started
-          </GlowingButton>
+          <AppStoreButton />
         </div>
       </nav>
 
@@ -88,12 +87,12 @@ export default function Home() {
                 to help you look your best. Take your appearance to the next level.
               </p>
               <div className="flex gap-4 mt-4">
-                <GlowingButton variant="primary" size="lg" glowIntensity="high">
-                  Start Your Journey
-                </GlowingButton>
-                <GlowingButton variant="outlined" size="lg">
-                  Learn More
-                </GlowingButton>
+                <AppStoreButton className="w-auto" />
+                <Link href="#features">
+                  <GlowingButton variant="outlined" size="lg">
+                    Learn More
+                  </GlowingButton>
+                </Link>
               </div>
             </div>
           </AnimatedElement>
@@ -277,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Image Grid Gallery */}
-      <section className="py-20 px-8 sm:px-16 bg-black/40">
+      <section id="gallery" className="py-20 px-8 sm:px-16 bg-black/40">
         <div className="max-w-6xl mx-auto">
           <AnimatedElement type="fade-up">
             <h2 className="text-4xl font-bold text-center mb-4 text-glow">Success Gallery</h2>
@@ -317,7 +316,7 @@ export default function Home() {
             
             <AnimatedElement type="fade-up" delay={200} className="h-full">
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
-          <Image
+                <Image
                   src="/facecard3.png"
                   alt="Facecard transformation example"
                   fill
@@ -331,7 +330,7 @@ export default function Home() {
             
             <AnimatedElement type="fade-up" delay={250} className="h-full">
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
-          <Image
+                <Image
                   src="/facecard4.png"
                   alt="Facecard transformation example"
                   fill
@@ -340,133 +339,6 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-white font-semibold">Complete Makeover</span>
                 </div>
-              </div>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-8 sm:px-16">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedElement type="fade-up">
-            <h2 className="text-4xl font-bold text-center mb-4 text-glow">Simple Pricing</h2>
-            <p className="text-lg text-center mb-16 text-purple-300 max-w-3xl mx-auto">
-              Choose the plan that fits your needs and start your transformation journey today.
-            </p>
-          </AnimatedElement>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedElement type="fade-up" delay={100} className="h-full">
-              <div className="bg-black border border-purple-900/50 p-8 rounded-xl shadow-lg card-hover h-full">
-                <h3 className="text-2xl font-semibold mb-3 text-purple-300">Basic</h3>
-                <div className="mb-6">
-                  <span className="text-5xl font-bold text-white">Free</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Basic facial analysis
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    1 recommendation per month
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Limited tracking features
-                  </li>
-                </ul>
-                <GlowingButton variant="outlined" className="w-full">
-                  Get Started
-                </GlowingButton>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement type="fade-up" delay={200} className="h-full">
-              <div className="bg-black border border-purple-600/50 p-8 rounded-xl shadow-lg card-hover h-full relative box-glow">
-                <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-                  Popular
-                </div>
-                <h3 className="text-2xl font-semibold mb-3 text-purple-300">Premium</h3>
-                <div className="mb-6">
-                  <span className="text-5xl font-bold text-white">$9.99</span>
-                  <span className="text-gray-400">/month</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Advanced facial analysis
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Unlimited recommendations
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Full tracking features
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Personalized routines
-                  </li>
-                </ul>
-                <GlowingButton variant="primary" className="w-full" glowIntensity="high">
-                  Get Started
-                </GlowingButton>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement type="fade-up" delay={300} className="h-full">
-              <div className="bg-black border border-purple-900/50 p-8 rounded-xl shadow-lg card-hover h-full">
-                <h3 className="text-2xl font-semibold mb-3 text-purple-300">Pro</h3>
-                <div className="mb-6">
-                  <span className="text-5xl font-bold text-white">$19.99</span>
-                  <span className="text-gray-400">/month</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Premium facial analysis
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Unlimited recommendations
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    Advanced tracking with AI insights
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <svg className="h-5 w-5 text-purple-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    1-on-1 consultation
-                  </li>
-                </ul>
-                <GlowingButton variant="secondary" className="w-full">
-                  Get Started
-                </GlowingButton>
               </div>
             </AnimatedElement>
           </div>
@@ -482,9 +354,7 @@ export default function Home() {
               Join thousands of users who have discovered their best looks with Facecard.
               Your journey to your best self begins now.
             </p>
-            <GlowingButton variant="primary" size="lg" glowIntensity="high">
-              Get Started Today
-            </GlowingButton>
+            <AppStoreButton className="mx-auto" />
           </AnimatedElement>
         </div>
       </section>
@@ -494,7 +364,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-6 md:mb-0">
-          <Image
+              <Image
                 src="/facecardlogo.png"
                 alt="Facecard Logo"
                 width={40}
