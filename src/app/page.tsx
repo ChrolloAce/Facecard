@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import AnimatedElement from "../components/AnimatedElement";
 import GlowingButton from "../components/GlowingButton";
+import ImageCarousel from "../components/ImageCarousel";
 
 export default function Home() {
   // For header transparency effect
@@ -317,7 +318,7 @@ export default function Home() {
             
             <AnimatedElement type="fade-up" delay={200} className="h-full">
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
-                <Image
+          <Image
                   src="/facecard3.png"
                   alt="Facecard transformation example"
                   fill
@@ -331,7 +332,7 @@ export default function Home() {
             
             <AnimatedElement type="fade-up" delay={250} className="h-full">
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
-                <Image
+          <Image
                   src="/facecard4.png"
                   alt="Facecard transformation example"
                   fill
@@ -494,7 +495,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-6 md:mb-0">
-              <Image
+          <Image
                 src="/facecardlogo.png"
                 alt="Facecard Logo"
                 width={40}

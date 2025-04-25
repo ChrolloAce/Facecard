@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 interface ImageCarouselProps {
@@ -15,26 +15,26 @@ export default function ImageCarousel({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const goToNext = useCallback(() => {
+  const goToNext = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     setTimeout(() => setIsTransitioning(false), 500);
-  }, [isTransitioning, images.length]);
+  };
 
-  const goToPrevious = useCallback(() => {
+  const goToPrevious = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     setTimeout(() => setIsTransitioning(false), 500);
-  }, [isTransitioning, images.length]);
+  };
 
-  const goToSlide = useCallback((index: number) => {
+  const goToSlide = (index: number) => {
     if (isTransitioning || index === currentIndex) return;
     setIsTransitioning(true);
     setCurrentIndex(index);
     setTimeout(() => setIsTransitioning(false), 500);
-  }, [isTransitioning, currentIndex]);
+  };
 
   // Auto play effect
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function ImageCarousel({
     }, autoPlayInterval);
     
     return () => clearInterval(interval);
-  }, [autoPlayInterval, goToNext]);
+  }, [autoPlayInterval, currentIndex, isTransitioning]);
 
   if (images.length === 0) return null;
 
