@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import AnimatedElement from "../components/AnimatedElement";
 import GlowingButton from "../components/GlowingButton";
+import ImageCarousel from "../components/ImageCarousel";
 
 export default function Home() {
   // For header transparency effect
@@ -270,6 +271,127 @@ export default function Home() {
               <div className="mt-4 text-center">
                 <h3 className="text-xl font-semibold text-purple-300">Sarah, 31</h3>
                 <p className="text-gray-300">5 months using Facecard&apos;s personalized routines</p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Gallery Section */}
+      <section className="py-20 px-8 sm:px-16">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement type="fade-up">
+            <h2 className="text-4xl font-bold text-center mb-4 text-glow">Featured Transformations</h2>
+            <p className="text-lg text-center mb-16 text-purple-300 max-w-3xl mx-auto">
+              Browse our gallery of stunning transformations achieved through Facecard&apos;s AI-powered recommendations.
+            </p>
+          </AnimatedElement>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            <AnimatedElement type="fade-right" delay={100}>
+              <div className="aspect-square md:aspect-[4/3] rounded-xl overflow-hidden box-glow shadow-lg">
+                <ImageCarousel 
+                  images={[
+                    { src: '/facecard1.png', alt: 'Facecard transformation example 1' },
+                    { src: '/facecard2.png', alt: 'Facecard transformation example 2' },
+                  ]}
+                  className="h-full"
+                  autoPlayInterval={6000}
+                />
+              </div>
+            </AnimatedElement>
+            
+            <AnimatedElement type="fade-left" delay={200}>
+              <div className="aspect-square md:aspect-[4/3] rounded-xl overflow-hidden box-glow shadow-lg">
+                <ImageCarousel 
+                  images={[
+                    { src: '/facecard3.png', alt: 'Facecard transformation example 3' },
+                    { src: '/facecard4.png', alt: 'Facecard transformation example 4' },
+                  ]}
+                  className="h-full"
+                  autoPlayInterval={7000}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <AnimatedElement type="fade-up">
+              <p className="text-lg text-purple-300 mb-8">
+                Ready to see what Facecard can do for your appearance?
+              </p>
+              <GlowingButton variant="primary" size="lg" glowIntensity="high">
+                Start Your Transformation
+              </GlowingButton>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Grid Gallery */}
+      <section className="py-20 px-8 sm:px-16 bg-black/40">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedElement type="fade-up">
+            <h2 className="text-4xl font-bold text-center mb-4 text-glow">Success Gallery</h2>
+            <p className="text-lg text-center mb-16 text-purple-300 max-w-3xl mx-auto">
+              Explore our collection of successful transformations and see what&apos;s possible with Facecard.
+            </p>
+          </AnimatedElement>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <AnimatedElement type="fade-up" delay={100} className="h-full">
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
+                <Image
+                  src="/facecard1.png"
+                  alt="Facecard transformation example"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white font-semibold">Jawline Enhancement</span>
+                </div>
+              </div>
+            </AnimatedElement>
+            
+            <AnimatedElement type="fade-up" delay={150} className="h-full">
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
+                <Image
+                  src="/facecard2.png"
+                  alt="Facecard transformation example"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white font-semibold">Skin Rejuvenation</span>
+                </div>
+              </div>
+            </AnimatedElement>
+            
+            <AnimatedElement type="fade-up" delay={200} className="h-full">
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
+                <Image
+                  src="/facecard3.png"
+                  alt="Facecard transformation example"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white font-semibold">Facial Symmetry</span>
+                </div>
+              </div>
+            </AnimatedElement>
+            
+            <AnimatedElement type="fade-up" delay={250} className="h-full">
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden group transition-all duration-300 transform hover:scale-[1.02] cursor-pointer">
+                <Image
+                  src="/facecard4.png"
+                  alt="Facecard transformation example"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white font-semibold">Complete Makeover</span>
+                </div>
               </div>
             </AnimatedElement>
           </div>
