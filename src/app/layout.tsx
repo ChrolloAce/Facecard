@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Facecard | Looks Maxing App",
-  description: "Enhance your appearance with Facecard, the ultimate looks maxing app",
+  title: "Facecard - Looks Maxing App",
+  description: "Take your appearance to the next level with personalized routines and recommendations",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
