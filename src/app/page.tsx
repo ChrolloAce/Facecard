@@ -11,6 +11,7 @@ import AppStoreButton from "../components/AppStoreButton";
 export default function Home() {
   // For header transparency effect
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,14 @@ export default function Home() {
     };
   }, [scrolled]);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen flex flex-col animated-bg">
       {/* Navigation Bar */}
@@ -37,7 +46,7 @@ export default function Home() {
         }`}
       >
         <div className="flex items-center">
-        <Image
+          <Image
             src="/facecardlogo.png"
             alt="Facecard Logo"
             width={48}
@@ -47,7 +56,9 @@ export default function Home() {
           />
           <span className="ml-3 text-xl font-bold text-glow bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Facecard</span>
         </div>
-        <div className="flex gap-6">
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-6">
           <Link 
             href="#features" 
             className="text-sm hover-underline-animation"
@@ -67,10 +78,56 @@ export default function Home() {
             Gallery
           </Link>
         </div>
-        <div>
+        
+        <div className="hidden md:block">
           <AppStoreButton />
         </div>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 p-1 rounded-md focus:outline-none"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span className={`w-6 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${mobileMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+          <span className={`w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      <div 
+        className={`fixed inset-0 bg-black/95 backdrop-blur-lg pt-24 px-8 z-40 transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        } md:hidden`}
+      >
+        <div className="flex flex-col gap-8 items-center">
+          <Link 
+            href="#features" 
+            className="text-lg font-medium hover-underline-animation"
+            onClick={closeMobileMenu}
+          >
+            Features
+          </Link>
+          <Link 
+            href="#how-it-works" 
+            className="text-lg font-medium hover-underline-animation"
+            onClick={closeMobileMenu}
+          >
+            How It Works
+          </Link>
+          <Link 
+            href="#gallery" 
+            className="text-lg font-medium hover-underline-animation"
+            onClick={closeMobileMenu}
+          >
+            Gallery
+          </Link>
+          <div className="mt-6">
+            <AppStoreButton />
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-8 sm:px-16 min-h-screen flex flex-col justify-center">
