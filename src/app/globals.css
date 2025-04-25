@@ -77,6 +77,45 @@ button {
   filter: drop-shadow(0 0 8px var(--primary-glow));
 }
 
+/* Color inversion effects */
+.invert {
+  filter: invert(100%);
+}
+
+.hue-rotate-180 {
+  filter: hue-rotate(180deg);
+}
+
+/* Combined filters */
+.invert.hue-rotate-180 {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+.invert.purple-glow {
+  filter: invert(100%) drop-shadow(0 0 8px var(--primary-glow));
+}
+
+.invert.hue-rotate-180.purple-glow {
+  filter: invert(100%) hue-rotate(180deg) drop-shadow(0 0 8px var(--primary-glow));
+}
+
+/* Before-After slider specific styles */
+.slider-handle-pulse {
+  animation: pulse-shadow 2s infinite;
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(147, 51, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0);
+  }
+}
+
 /* Background animation */
 .animated-bg {
   background: linear-gradient(

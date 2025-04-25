@@ -42,7 +42,7 @@ export default function Home() {
             width={48}
             height={48}
             priority
-            className="rounded-md purple-glow"
+            className="rounded-md purple-glow invert hue-rotate-180"
           />
           <span className="ml-3 text-xl font-bold text-glow bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Facecard</span>
         </div>
@@ -99,12 +99,13 @@ export default function Home() {
           </AnimatedElement>
           
           <AnimatedElement type="fade-left" delay={200} duration={800}>
-            <div className="w-full max-w-md mx-auto h-[500px] rounded-xl overflow-hidden relative box-glow">
+            <div className="w-full h-full max-w-md mx-auto rounded-xl overflow-hidden relative box-glow">
               <BeforeAfterSlider 
                 beforeImage="/before.png"
                 afterImage="/after.png"
                 beforeAlt="Before using Facecard"
                 afterAlt="After using Facecard"
+                className="aspect-[4/5] md:aspect-[3/4] lg:aspect-video"
               />
             </div>
           </AnimatedElement>
@@ -247,6 +248,7 @@ export default function Home() {
                   afterImage="/after.png"
                   beforeAlt="Before transformation"
                   afterAlt="After transformation"
+                  className="aspect-[4/5] md:aspect-video"
                 />
               </div>
               <div className="mt-4 text-center">
@@ -262,6 +264,7 @@ export default function Home() {
                   afterImage="/after.png"
                   beforeAlt="Before transformation"
                   afterAlt="After transformation"
+                  className="aspect-[4/5] md:aspect-video"
                 />
               </div>
               <div className="mt-4 text-center">
@@ -426,7 +429,7 @@ export default function Home() {
                 alt="Facecard Logo"
                 width={40}
                 height={40}
-                className="rounded-md purple-glow"
+                className="rounded-md purple-glow invert hue-rotate-180"
               />
               <span className="ml-3 text-xl font-bold text-glow bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Facecard</span>
             </div>
