@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import AnimatedElement from "../components/AnimatedElement";
 import GlowingButton from "../components/GlowingButton";
-import ImageCarousel from "../components/ImageCarousel";
 
 export default function Home() {
   // For header transparency effect
