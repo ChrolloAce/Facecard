@@ -2,11 +2,10 @@ import React from 'react';
 
 interface PhoneFrameProps {
   imageUrl?: string; // Make imageUrl optional
-  alt?: string;
   className?: string;
 }
 
-export default function PhoneFrame({ alt = "App screenshot", className = "" }: PhoneFrameProps) {
+export default function PhoneFrame({ className = "" }: PhoneFrameProps) {
   return (
     <div className={`relative ${className}`}>
       {/* Phone Frame */}
