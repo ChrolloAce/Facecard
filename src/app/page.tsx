@@ -384,7 +384,7 @@ export default function Home() {
             <div className="flex gap-8 mb-6 md:mb-0">
               <Link href="/privacy" className="text-sm hover-underline-animation">Privacy Policy</Link>
               <Link href="/terms" className="text-sm hover-underline-animation">Terms of Service</Link>
-              <Link href="mailto:support@maktubtechnologies.com" className="text-sm hover-underline-animation">Contact</Link>
+              <Link href="mailto:001ernestolopez@gmail.com" className="text-sm hover-underline-animation">Contact</Link>
             </div>
             <div className="text-sm text-gray-400">
               © 2024 Facecard. All rights reserved.

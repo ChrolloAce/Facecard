@@ -169,8 +169,8 @@ export default function PrivacyPolicy() {
             </p>
             
             <p className="text-gray-300">
-              Email: support@maktubtechnologies.com<br />
-              Phone: (786) 641-1493
+              Email: 001ernestolopez@gmail.com<br />
+              Phone: (833) 999-0739
             </p>
           </div>
         </div>
